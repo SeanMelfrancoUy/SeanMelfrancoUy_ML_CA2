@@ -1,0 +1,1 @@
+sns.kdeplot(df["Income(Thousands's)"], shade=True)
