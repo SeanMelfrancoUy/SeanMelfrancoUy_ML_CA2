@@ -1,0 +1,1 @@
+sns.heatmap(df[pairplotvis].corr(), annot=True, cmap='coolwarm')
