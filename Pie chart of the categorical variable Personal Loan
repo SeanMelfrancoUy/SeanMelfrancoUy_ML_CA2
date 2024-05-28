@@ -1,0 +1,12 @@
+df['Personal Loan'].value_counts()
+
+#The following code below has been sourced from https://www.statology.org/seaborn-pie-chart/.
+data = [4520, 480]
+
+labels = ['No', 'Yes']
+
+colors = sns.color_palette('pastel')[0:5]
+
+plt.pie(data, labels = labels, colors = colors, autopct='%.0f%%')
+plt.show()
+
