@@ -1,0 +1,3 @@
+pairplotvis = ["Age", "Income(Thousands's)", "Mortgage(Thousands's)", "Credit Score"]
+
+sns.pairplot(df[pairplotvis])
