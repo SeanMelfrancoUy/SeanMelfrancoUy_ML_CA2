@@ -1,0 +1,12 @@
+df2.rename(columns = {
+    'Personal Loan':'Personal_Loan', 
+    'Securities Account':'Securities_Account', 
+    'CD Account':'CD_Account', 
+    'Online Banking':'Online_Banking', 
+    "Income(Thousands's)":'Income', 
+    "Mortgage(Thousands's)":'Mortgage',
+    "Experience(Years)":'Experience',
+    "CreditCard": 'Credit_Card'},
+    inplace = True)
+
+df2.head()
