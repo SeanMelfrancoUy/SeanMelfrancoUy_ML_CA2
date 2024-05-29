@@ -1,0 +1,45 @@
+#The following code below has been sourced from https://michael-fuchs-python.netlify.app/2020/08/21/the-data-science-process-crisp-dm/.
+obj_col = ['object']
+object_columns = list(df2.select_dtypes(include=obj_col).columns)
+df_categorical = df2[object_columns]
+
+print()
+print('There are ' + str(df_categorical.shape[1]) + ' categorical columns within dataframe:')
+
+df_categorical.head()
+
+print('Values of the Education:')
+print()
+print(df2['Education'].value_counts())
+
+print('--------------------------------------------')
+
+print('Values of the variable Personal Loan:')
+print()
+print(df2['Personal Loan'].value_counts())
+
+print('--------------------------------------------')
+
+print('Values of the variable Securities Account:')
+print()
+print(df2['Securities Account'].value_counts())
+
+print('--------------------------------------------')
+
+print('Values of the variable CD Account:')
+print()
+print(df2['CD Account'].value_counts())
+
+print('--------------------------------------------')
+
+print('Values of the variable Online Banking:')
+print()
+print(df2['Online Banking'].value_counts())
+
+print('--------------------------------------------')
+
+print('Values of the variable Credit Card:')
+print()
+print(df2['CreditCard'].value_counts())
+
+print('--------------------------------------------')
