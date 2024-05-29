@@ -1,0 +1,48 @@
+#The following code below has been sourced from https://michael-fuchs-python.netlify.app/2020/08/21/the-data-science-process-crisp-dm/.
+def outliers_z_score(df):
+    threshold = 3
+
+    mean = np.mean(df)
+    std = np.std(df)
+    z_scores = [(y - mean) / std for y in df]
+    return np.where(np.abs(z_scores) > threshold)
+
+my_list = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
+num_columns = list(df.select_dtypes(include=my_list).columns)
+numerical_columns = df[num_columns]
+numerical_columns.head(3)
+
+outlier_list = numerical_columns.apply(lambda x: outliers_z_score(x))
+outlier_list
+
+df_of_outlier = outlier_list.iloc[0]
+df_of_outlier = pd.DataFrame(df_of_outlier)
+df_of_outlier.columns = ['Rows_to_exclude']
+df_of_outlier
+
+# Convert all values from column Rows_to_exclude to a numpy array
+outlier_list_final = df_of_outlier['Rows_to_exclude'].to_numpy()
+
+# Concatenate a whole sequence of arrays
+outlier_list_final = np.concatenate( outlier_list_final, axis=0 )
+
+# Drop duplicate values
+outlier_list_final_unique = set(outlier_list_final)
+outlier_list_final_unique
+
+filter_rows_to_exclude = df.index.isin(outlier_list_final_unique)
+df_without_outliers = df[~filter_rows_to_exclude]
+
+print('Length of original dataframe: ' + str(len(df)))
+
+print('Length of new dataframe without outliers: ' + str(len(df_without_outliers)))
+print('----------------------------------------------------------------------------------------------------')
+print('Difference between new and old dataframe: ' + str(len(df) - len(df_without_outliers)))
+print('----------------------------------------------------------------------------------------------------')
+print('Length of unique outlier list: ' + str(len(outlier_list_final_unique)))
+
+df_without_outliers = df_without_outliers.reset_index()
+
+df_without_outliers = df_without_outliers.rename(columns={'index':'old_index'})
+
+df_without_outliers.head(6)
