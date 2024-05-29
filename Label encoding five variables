@@ -1,0 +1,41 @@
+#The following code below has been sourced from https://michael-fuchs-python.netlify.app/2020/08.
+# Create a dictionary how the observations should be coded
+view_dict = {'No' : 0,
+             'Yes' : 1}
+
+view_dict1 = {'No' : 0,
+             'Yes' : 1}
+
+view_dict2 = {'No' : 0,
+             'Yes' : 1}
+
+view_dict3 = {'No' : 0,
+             'Yes' : 1}
+
+view_dict4 = {'No' : 0,
+             'Yes' : 1}
+
+view_dict5 = {'Diploma' : 0,
+             'Masters' : 1,
+             'Degree' : 2}
+
+
+
+# Map the dictionary on the column view and store the results in a new column
+df2['Personal_Loan_encoded'] = df2.Personal_Loan.map(view_dict)
+
+df2['Securities_Account_encoded'] = df2.Securities_Account.map(view_dict1)
+
+df2['CD_Account_encoded'] = df2.CD_Account.map(view_dict2)
+
+df2['Online_Banking_encoded'] = df2.Online_Banking.map(view_dict3)
+
+df2['Credit_Card_encoded'] = df2.Credit_Card.map(view_dict4)
+
+df2['Education_encoded'] = df2.Education.map(view_dict5)
+
+# Delete the original column to avoid duplication
+df2 = df2.drop(['Personal_Loan', 'Securities_Account', 'CD_Account', 'Online_Banking', 'Credit_Card', 'Education'], axis=1)
+
+print('New Data Frame:')
+df2.head()
