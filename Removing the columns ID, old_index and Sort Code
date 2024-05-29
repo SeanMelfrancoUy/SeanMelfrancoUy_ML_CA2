@@ -1,0 +1,3 @@
+df2 = df_without_outliers.drop(['ID', 'old_index', 'Sort Code'], axis=1)
+
+df2.head()
