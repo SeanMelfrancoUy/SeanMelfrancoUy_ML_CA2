@@ -1,0 +1,28 @@
+sns.histplot(data=df2, x="Age")
+
+sns.histplot(data=df2, x="Experience")
+
+sns.histplot(data=df2, x="Family")
+
+sns.histplot(data=df2, x="Credit Score")
+
+sns.histplot(data=df2, x="Mortgage")
+
+#The following 2 lines of code (or lines 2 to 3) has been sourced from https://www.hackersrealm.net/post/standardize-data-using-standard-scalar.
+for col in ['Age', 'Experience']:
+    df2[col] = (df2[col] - df2[col].mean()) / df2[col].std()
+
+df2['Age'].head()
+
+df2['Experience'].head()
+
+#The following code below has been sourced from https://medium.com/@siddharthverma.er.cse/data-transformation-techniques-with-python-elevate-your-data-game-21fcc7442cc2.
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+df2[['Credit Score', 'Family', 'Mortgage']] = scaler.fit_transform(df2[['Credit Score', 'Family', 'Mortgage']])
+
+df2['Credit Score'].head()
+
+df2['Family'].head()
+
+df2['Mortgage'].head()
