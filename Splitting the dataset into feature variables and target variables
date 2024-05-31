@@ -1,0 +1,5 @@
+#The following code below has been sourced from https://www.datacamp.com/tutorial/understanding-logistic-regression-python.
+#split dataset in features and target variable
+feature_cols = ['Age', 'Experience', 'Credit Score', 'Family', 'Mortgage', 'Education_encoded', 'Personal_Loan_encoded', 'Securities_Account_encoded', 'CD_Account_encoded', 'Online_Banking_encoded', 'Credit_Card_encoded']
+X = df2[feature_cols] # Features
+y = df2.Income # Target variable
