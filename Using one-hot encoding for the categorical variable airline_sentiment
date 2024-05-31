@@ -1,0 +1,4 @@
+one_hot = pd.get_dummies(df3["airline_sentiment"], dtype=int)
+df3.drop(['airline_sentiment'],axis=1,inplace=True)
+df3 = pd.concat([df3,one_hot],axis=1)
+df3.head()
