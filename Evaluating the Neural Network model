@@ -1,0 +1,5 @@
+# evaluate the keras model
+loss = model.evaluate(X_test, y_test)
+
+print("Mean Absolute Error (MAE):", loss)
+print("Root Mean Squared Error (RMSE):", np.sqrt(loss))
