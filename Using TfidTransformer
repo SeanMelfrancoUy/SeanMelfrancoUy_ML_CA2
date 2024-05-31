@@ -1,0 +1,5 @@
+tfidf = TfidfTransformer()
+X_train = tfidf.fit_transform(X_train)
+X_test = tfidf.transform(X_test)
+X_train = X_train.toarray()
+X_test = X_test.toarray()
