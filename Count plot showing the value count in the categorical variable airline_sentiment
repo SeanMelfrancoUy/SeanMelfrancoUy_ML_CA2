@@ -1,0 +1,1 @@
+sns.countplot(data=df3, x="airline_sentiment")
