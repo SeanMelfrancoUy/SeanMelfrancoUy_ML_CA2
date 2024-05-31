@@ -1,0 +1,2 @@
+model_score = model.evaluate(X_test, y_test, batch_size=64, verbose=1)
+print('Test accuracy:', model_score[1])
