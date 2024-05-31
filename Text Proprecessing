@@ -21,3 +21,6 @@ def preprocess_text(text):
     processed_text = ' '.join(lemmatized_tokens)
 
     return processed_text
+
+df3['text'] = df3['text'].apply(preprocess_text)
+df3
