@@ -1,0 +1,11 @@
+# Calculate evaluation metrics
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+r_squared = r2_score(y_test, y_pred)
+rmse = np.sqrt(mse)
+ 
+# Print the evaluation metrics
+print("Mean Absolute Error (MAE):", mae)
+print("Mean Squared Error (MSE):", mse)
+print("R-squared (R²):", r_squared)
+print("Root Mean Squared Error (RMSE):", rmse)
