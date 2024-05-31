@@ -1,0 +1,4 @@
+df3 = df3.drop(['tweet_id', 'airline_sentiment_confidence', 'negativereason', 'negativereason_confidence', 'airline', 'name', 'tweet_location', 'user_timezone', 'tweet_created', 'retweet_count'], axis=1)
+df3.dropna(inplace=True)
+
+df3.head()
