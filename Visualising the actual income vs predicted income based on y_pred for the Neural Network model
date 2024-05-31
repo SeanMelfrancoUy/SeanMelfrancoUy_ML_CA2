@@ -1,0 +1,8 @@
+#The following code has been sourced from https://www.w3schools.com/python/matplotlib_scatter.asp.
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='blue')
+plt.xlabel('Actual Income')
+plt.ylabel('Predicted Income')
+plt.title('Actual Income Vs Predicted Income')
+plt.show()
