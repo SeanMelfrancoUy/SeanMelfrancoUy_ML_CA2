@@ -1,0 +1,2 @@
+# compile the keras model
+model.compile(loss='mean_squared_error', optimizer='adam')
