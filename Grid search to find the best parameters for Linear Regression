@@ -1,0 +1,27 @@
+#The following code below has been sourced from https://vitalflux.com/gridsearchcv-logistic-regression-machine-learning-examples/#:~:text=GridSearchCV%20Object%3A%20A%20GridSearchCV%20object,of%20parameters%20in%20the%20grid.
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LinearRegression
+
+#split dataset in features and target variable
+feature_cols = ['Age', 'Experience', 'Credit Score', 'Family', 'Mortgage', 'Education_encoded', 'Personal_Loan_encoded', 'Securities_Account_encoded', 'CD_Account_encoded', 'Online_Banking_encoded', 'Credit_Card_encoded']
+X = df2[feature_cols] # Features
+y = df2.Income # Target variable
+
+#Instantiate the Linear Regression model
+LR = LinearRegression()
+
+# Define the hyperparameter grid
+param_grid = {
+    'fit_intercept': [True, False],
+    'normalize': [True, False],
+}
+
+# Create GridSearchCV object
+grid_search = GridSearchCV(LR, param_grid, cv=5)
+
+# Fit the model
+grid_search.fit(X, y)
+
+# Print best parameters and best score
+print("Best Parameters:", grid_search.best_params_)
+print("Best Score:", grid_search.best_score_)
