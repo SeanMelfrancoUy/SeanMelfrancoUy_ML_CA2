@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#The following code below has been sourced from https://numpy.org/doc/stable/reference/generated/numpy.argmax.html.
+#This will one hot encode the actual and predicted sentiments from preds and y_test
+predicted_sentiment = np.argmax(preds, axis=1)
+actual_sentiment = np.argmax(y_test, axis=1)
+
+#Create a new dataframe containing the actual and predicted sentiments
+df_sentiment = pd.DataFrame({'Actual Sentiment': actual_sentiment, 'Predicted Sentiment': predicted_sentiment})
+
