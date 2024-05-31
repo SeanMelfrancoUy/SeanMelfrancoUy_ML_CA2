@@ -1,0 +1,12 @@
+#The following code below has been sourced from https://www.w3schools.com/python/ref_string_replace.asp.
+#Replace the values in df_sentiment with the values in the airline_sentiment_map.
+df_sentiment = df_sentiment.replace({'Actual Sentiment': airline_sentiment_map, 'Predicted Sentiment': airline_sentiment_map})
+
+#The following code below has been sourced from https://seaborn.pydata.org/archive/0.11/generated/seaborn.countplot.html.
+#Creating a bar plot showing the distribution of predicted sentiments
+plt.figure(figsize=(10, 6))
+sns.countplot(x='Predicted Sentiment', data=df_sentiment, order=['negative', 'neutral', 'positive'])
+plt.title('Distribution of Predicted Sentiment (Airline Sentiment)')
+plt.xlabel('Sentiment')
+plt.ylabel('Count')
+plt.show()
