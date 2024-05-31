@@ -1,0 +1,2 @@
+X = df3['text'].values
+y = df3.drop('text', axis=1).values
