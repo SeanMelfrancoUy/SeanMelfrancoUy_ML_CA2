@@ -1,0 +1,3 @@
+vect = CountVectorizer()
+X_train = vect.fit_transform(X_train)
+X_test = vect.transform(X_test)
