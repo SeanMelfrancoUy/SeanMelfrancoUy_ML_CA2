@@ -1,0 +1,4 @@
+# Create and train the Linear Regression model
+model = LinearRegression()
+
+model.fit(X_train, y_train)
