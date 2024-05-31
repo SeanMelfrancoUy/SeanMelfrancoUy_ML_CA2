@@ -1,0 +1,3 @@
+df3_Positive = df3[df3['airline_sentiment'] == 'Positive']
+df3_Neutral = df3[df3['airline_sentiment'] == 'Neutral']
+df3_Negative = df3[df3['airline_sentiment'] == 'Negative'][0:8000]
